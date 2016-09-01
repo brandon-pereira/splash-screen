@@ -1,13 +1,30 @@
 $(function() {
 	// Initialize the loader
 	var loader = new Loader();
-	var min = 2000;
-	var max = 10000;
-	var duration = Math.floor(Math.random()*(max-min+1)+min);
-	setTimeout(function() {
-		// After timer destroy loader and do all the things
-		loader.destroy();
+	
+	var randomNumber = function(min, max) {
+		return Math.floor(Math.random()*(max-min+1)+min);
+	};
+	
+	var open = function() {
+		loader.open();	
+		$('body').removeClass('loaded');
+		$('h1').text('Loading...');
+	};
+	
+	var close = function() {
+		loader.close();
 		$('body').addClass('loaded');
 		$('h1').text('Loaded!');
-	}, duration);
+	};
+	
+	$('h1').on('click', function() {
+		if($('body').hasClass('loaded')) {
+			open();
+		} else {
+			close();
+		}
+	});
+	
+	open();
 });

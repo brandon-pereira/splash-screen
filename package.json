@@ -1,0 +1,30 @@
+{
+  "name": "splash-screen",
+  "version": "1.0.0",
+  "description": "Rapid Prototyping",
+  "repository": "https://github.com/brandon-pereira/splash-screen",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.5.2",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.6",
+    "gulp-webserver": "^0.9.1",
+    "main-bower-files": "^2.11.1",
+    "yargs": "^4.7.1"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "author": "Brandon Pereira",
+  "license": "ISC"
+}

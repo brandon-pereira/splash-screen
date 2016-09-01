@@ -1,0 +1,20 @@
+{
+  "name": "splash-screen",
+  "version": "1.0.0",
+  "authors": [
+    "Branclon <brandonpereiras@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "./dist",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gsap": "^1.18.5",
+    "zepto": "^1.1.6",
+    "randomcolor": "randomColor#^0.4.4"
+  }
+}

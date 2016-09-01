@@ -12,7 +12,10 @@ function Loader(options) {
 	/**
 	 * Function to kick off the loader
 	 */
-	this.init = function() {
+	this.open = function() {
+		// create local references to options (so we can reuse)
+		this._minWidth = this.options.minWidth;
+		
 		for(var i = this.options.panels; i > 0; i--) {
 			var panel = this._createPanel(i);
 		}
@@ -66,8 +69,8 @@ function Loader(options) {
 	 * @return {Number} width Width of the panel
 	 */
 	this._getNextPanelWidth = function() {
-			var width = Math.random() * (this.options.maxWidth - this.options.minWidth) + this.options.minWidth;
-			this.options.minWidth = width;
+			var width = Math.random() * (this.options.maxWidth - this._minWidth) + this._minWidth;
+			this._minWidth = width;
 			return width;
 	};
 	
@@ -98,13 +101,13 @@ function Loader(options) {
 	/**
 	 * Cleanup method which turns off and destroys the loader module
 	 */
-	this.destroy = function() {
+	this.close = function() {
 		if(this.animation) { 
 			this.animation.kill();
 			this.$panelContainer.remove();
+			this.$panelContainer = null;
+			this.elements = [];
 			$(window).off('resize');
 		}
 	};
-	
-	this.init();
 }

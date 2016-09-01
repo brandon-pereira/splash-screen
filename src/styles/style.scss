@@ -12,6 +12,8 @@ body {
   display: flex;
   align-items: center;
   text-shadow:0 1px 2px #000;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
@@ -21,14 +23,16 @@ body.loaded {
   text-shadow: 0 1px darken(map-deep-get($config, body, background), 20%);
 }
 
-h1 {
+h1, h2 {
   display: block;
-  flex: 1;
-  font: 900 50px/30px 'Helvetica Neue', arial, sans-serif;
+  font: 900 50px/10px 'Helvetica Neue', arial, sans-serif;
   text-transform: uppercase;
   position:relative;
   z-index:100;
   text-align: center;  
+}
+h2 {
+  font-size:16px;
 }
 .splash-screen-container {
   position: absolute;

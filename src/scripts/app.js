@@ -18,7 +18,7 @@ $(function() {
 		$('h1').text('Loaded!');
 	};
 	
-	$('h1').on('click', function() {
+	$('body').on('click', function() {
 		if($('body').hasClass('loaded')) {
 			open();
 		} else {
